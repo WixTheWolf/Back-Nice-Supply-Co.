@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Back Nine Supply Co.</title>
+    <meta
+      name="description"
+      content="Back Nine Supply Co. is a modern golf lifestyle brand built for timeless style, quiet confidence, and life beyond the 18th hole."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="nav container">
+        <p class="brand">Back Nine Supply Co.</p>
+        <a class="cta-link" href="#story">Our Story</a>
+      </nav>
+
+      <div class="hero-content container">
+        <p class="kicker">Modern Golf Lifestyle</p>
+        <h1>Built for 18 holes. Worn everywhere after.</h1>
+        <p class="lead">
+          Back Nine Supply Co. is for golfers who appreciate timeless style,
+          quiet confidence, and the culture that surrounds the game.
+        </p>
+      </div>
+    </header>
+
+    <main>
+      <section class="section container" id="story">
+        <h2>Inspired by the rhythm of the round</h2>
+        <p>
+          Early tee times, coastal rounds, twilight finishes, and life beyond
+          the 18th hole shape everything we make. Our collections are designed
+          to move effortlessly from the course to everyday life.
+        </p>
+      </section>
+
+      <section class="section split container">
+        <div class="card">
+          <h3>Performance, quietly refined</h3>
+          <p>
+            Premium apparel and accessories crafted with breathable fabrics,
+            clean fits, and modern function—built to perform while keeping an
+            understated look.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Style without trying too hard</h3>
+          <p>
+            Refined colors and versatile silhouettes designed for players who
+            want to look sharp, feel comfortable, and stay ready for wherever
+            the day goes after the last putt drops.
+          </p>
+        </div>
+      </section>
+
+      <section class="section container manifesto">
+        <h2>A ritual. A lifestyle. A way to slow down.</h2>
+        <p>
+          Back Nine Supply Co. exists for players who love golf not only as a
+          sport, but as a mindset—intentional, unhurried, and rooted in moments
+          that matter.
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© <span id="year"></span> Back Nine Supply Co.</p>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
