@@ -1,0 +1,9 @@
+<section class="shell section">
+<h2>{{ section.settings.title }}</h2><p class="subcopy">{{ section.settings.text }}</p>
+<div class="product-grid">
+{% assign featured = collections[section.settings.collection] %}
+{% for product in featured.products limit: 4 %}
+<article class="product-card"><a href="{{ product.url }}">{{ product.featured_image | image_url: width: 800 | image_tag }}<p class="badge">{{ section.settings.badge }}</p><h3>{{ product.title }}</h3><p>{{ product.price | money }}</p></a></article>
+{% else %}<p>Add products to the selected collection to populate this section.</p>{% endfor %}
+</div></section>
+{% schema %}{"name":"Featured collection","settings":[{"type":"text","id":"title","default":"Drop 001: The Twilight Collection","label":"Title"},{"type":"textarea","id":"text","default":"Timeless polos, refined hats, and everyday layers inspired by late rounds, coastal air, and quiet confidence.","label":"Text"},{"type":"collection","id":"collection","label":"Collection"},{"type":"text","id":"badge","default":"New","label":"Product badge"}]}{% endschema %}

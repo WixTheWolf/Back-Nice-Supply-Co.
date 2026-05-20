@@ -1,0 +1,7 @@
+<section class="hero shell" style="background-image:linear-gradient(rgba(17,17,17,.45),rgba(17,17,17,.45)),url({{ section.settings.image | image_url: width: 2200 }});">
+  <p class="eyebrow">{{ section.settings.eyebrow }}</p>
+  <h1>{{ section.settings.title }}</h1>
+  <p>{{ section.settings.text }}</p>
+  <div class="button-row"><a class="btn" href="{{ section.settings.button_link }}">{{ section.settings.button_label }}</a><a class="btn btn-ghost" href="{{ section.settings.secondary_link }}">{{ section.settings.secondary_label }}</a></div>
+</section>
+{% schema %}{"name":"Hero","settings":[{"type":"image_picker","id":"image","label":"Hero image"},{"type":"text","id":"eyebrow","label":"Eyebrow","default":"Quiet confidence for the modern golfer"},{"type":"text","id":"title","default":"Built for 18 holes. Worn everywhere after.","label":"Title"},{"type":"textarea","id":"text","default":"Premium golf apparel for early tee times, twilight rounds, and everything that happens beyond the 18th green.","label":"Text"},{"type":"text","id":"button_label","default":"Shop the Collection","label":"Primary label"},{"type":"url","id":"button_link","label":"Primary link"},{"type":"text","id":"secondary_label","default":"Join the Clubhouse","label":"Secondary label"},{"type":"url","id":"secondary_link","label":"Secondary link"}]}{% endschema %}

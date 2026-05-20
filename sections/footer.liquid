@@ -1,0 +1,11 @@
+<footer class="footer">
+  <div class="shell footer-grid">
+    <div><h3>Back Nine Supply Co.</h3><p>{{ section.settings.statement }}</p></div>
+    <div>{{ section.settings.signup_heading }}{% form 'customer' %}<input type="email" name="contact[email]" placeholder="Email address"><button type="submit">Join</button>{% endform %}</div>
+    <div><h4>Customer care</h4><ul>{% for link in linklists[section.settings.care_menu].links %}<li><a href="{{ link.url }}">{{ link.title }}</a></li>{% endfor %}</ul></div>
+  </div>
+  <p class="copyright">© {{ 'now' | date: '%Y' }} {{ shop.name }}</p>
+</footer>
+{% schema %}
+{"name":"Footer","settings":[{"type":"textarea","id":"statement","label":"Brand statement","default":"Golf apparel without the noise. Built for 18 holes. Worn everywhere after."},{"type":"text","id":"signup_heading","label":"Signup heading","default":"Join the Clubhouse"},{"type":"link_list","id":"care_menu","label":"Customer care menu","default":"footer"}]}
+{% endschema %}

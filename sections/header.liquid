@@ -1,0 +1,12 @@
+<header class="header shell">
+  <a class="logo" href="{{ routes.root_url }}">{{ section.settings.logo_text }}</a>
+  <nav>
+    <ul class="nav-list">
+      {% for link in linklists[section.settings.menu].links %}<li><a href="{{ link.url }}">{{ link.title }}</a></li>{% endfor %}
+    </ul>
+  </nav>
+  <a class="cart-link" href="{{ routes.cart_url }}">Cart ({{ cart.item_count }})</a>
+</header>
+{% schema %}
+{"name":"Header","settings":[{"type":"text","id":"logo_text","label":"Logo text","default":"Back Nine Supply Co."},{"type":"link_list","id":"menu","label":"Navigation menu","default":"main-menu"}]}
+{% endschema %}

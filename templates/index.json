@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "hero": {"type": "hero", "settings": {}},
+    "featured_collection": {"type": "featured-collection", "settings": {}},
+    "manifesto": {"type": "manifesto", "settings": {}},
+    "feature_grid": {"type": "feature-grid", "settings": {}},
+    "palette": {"type": "palette", "settings": {}},
+    "editorial": {"type": "editorial-grid", "settings": {}},
+    "email": {"type": "email-capture", "settings": {}}
+  },
+  "order": ["hero", "featured_collection", "manifesto", "feature_grid", "palette", "editorial", "email"]
+}
