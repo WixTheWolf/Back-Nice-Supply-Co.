@@ -1,0 +1,40 @@
+<section class="shell section product-layout">
+  <div>
+    {% if product.featured_image %}
+      {{ product.featured_image | image_url: width: 1600 | image_tag: loading: 'eager' }}
+    {% endif %}
+  </div>
+  <aside class="purchase-panel">
+    <p class="eyebrow">{{ product.vendor | escape }}</p>
+    <h1>{{ product.title | escape }}</h1>
+    <p>{{ product.selected_or_first_available_variant.price | money }}</p>
+    <p>{{ section.settings.sample_copy }}</p>
+
+    {% form 'product', product %}
+      {% for option in product.options_with_values %}
+        <label for="Option-{{ section.id }}-{{ forloop.index0 }}">{{ option.name }}</label>
+        <select id="Option-{{ section.id }}-{{ forloop.index0 }}" name="options[{{ option.name | escape }}]">
+          {% for value in option.values %}
+            <option {% if option.selected_value == value %}selected{% endif %}>{{ value }}</option>
+          {% endfor %}
+        </select>
+      {% endfor %}
+      <label for="Qty-{{ section.id }}">Quantity</label>
+      <input id="Qty-{{ section.id }}" type="number" min="1" name="quantity" value="1">
+      <button class="btn" type="submit">Add to cart</button>
+    {% endform %}
+
+    <div class="accordion">
+      <details open><summary>Fit notes</summary><p>{{ section.settings.fit_notes }}</p></details>
+      <details><summary>Fabric notes</summary><p>{{ section.settings.fabric_notes }}</p></details>
+      <details><summary>Care instructions</summary><p>{{ section.settings.care_notes }}</p></details>
+      <details><summary>Shipping & returns</summary><p>{{ section.settings.shipping_notes }}</p></details>
+    </div>
+    <ul class="built-for">
+      <li>4-way stretch</li><li>breathable performance</li><li>soft hand feel</li><li>UPF 50+</li><li>moisture wicking</li>
+    </ul>
+  </aside>
+</section>
+{% schema %}
+{"name":"Main product","settings":[{"type":"textarea","id":"sample_copy","label":"Product intro","default":"The Heritage Stripe Polo brings vintage golf energy into a cleaner modern fit. Lightweight, breathable, and sharp enough to wear long after the scorecard disappears."},{"type":"textarea","id":"fit_notes","label":"Fit notes","default":"Tailored athletic fit. True to size."},{"type":"textarea","id":"fabric_notes","label":"Fabric notes","default":"Lightweight performance knit with soft hand feel."},{"type":"textarea","id":"care_notes","label":"Care notes","default":"Machine wash cold. Hang dry."},{"type":"textarea","id":"shipping_notes","label":"Shipping/returns","default":"Free shipping over $100. 30-day returns."}]}
+{% endschema %}

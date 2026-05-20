@@ -1,0 +1,2 @@
+<section class="shell section"><h1>Your Cart</h1>{% if cart.item_count == 0 %}<p>Your bag is currently empty.</p>{% else %}<form action="{{ routes.cart_url }}" method="post"><ul>{% for item in cart.items %}<li>{{ item.title }} × {{ item.quantity }} — {{ item.final_line_price | money }}</li>{% endfor %}</ul><p>Subtotal: {{ cart.total_price | money }}</p><button class="btn" name="checkout">Checkout</button></form>{% endif %}</section>
+{% schema %}{"name":"Main cart","settings":[]}{% endschema %}

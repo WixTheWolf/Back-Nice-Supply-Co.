@@ -1,0 +1,74 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "image": "shopify://shop_images/hero-v2-sunset.png",
+        "eyebrow": "Quiet confidence for the modern golfer",
+        "title": "Built for 18 holes. Worn everywhere after.",
+        "text": "Premium golf apparel for early tee times, twilight rounds, and everything that happens beyond the 18th green.",
+        "button_label": "Shop the Collection",
+        "button_link": "",
+        "secondary_label": "Join the Clubhouse",
+        "secondary_link": ""
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Drop 001: The Twilight Collection",
+        "text": "Timeless polos, refined hats, and everyday layers inspired by late rounds, coastal air, and quiet confidence.",
+        "collection": "",
+        "badge": "New"
+      }
+    },
+    "manifesto": {
+      "type": "manifesto",
+      "settings": {
+        "title": "Golf apparel without the noise.",
+        "body": "Back Nine Supply Co. was built for golfers who love the game without needing to perform for it. Clean fits, muted colors, breathable fabrics, and pieces that move from the first tee to the last call."
+      }
+    },
+    "feature_grid": {
+      "type": "feature-grid",
+      "settings": {}
+    },
+    "palette": {
+      "type": "palette",
+      "settings": {
+        "title": "Earth, ocean, sand, sky. The best color palette of all.",
+        "text": "A restrained palette built for everyday wear."
+      }
+    },
+    "editorial": {
+      "type": "editorial-grid",
+      "settings": {}
+    },
+    "email": {
+      "type": "email-capture",
+      "settings": {
+        "title": "Join the Clubhouse.",
+        "text": "Early access to new drops, private offers, and field notes from the Back Nine.",
+        "button": "Get Early Access"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "featured_collection",
+    "manifesto",
+    "feature_grid",
+    "palette",
+    "editorial",
+    "email"
+  ]
+}
