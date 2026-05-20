@@ -1,12 +1,52 @@
-<header class="header shell">
-  <a class="logo" href="{{ routes.root_url }}">{{ section.settings.logo_text }}</a>
-  <nav>
-    <ul class="nav-list">
-      {% for link in linklists[section.settings.menu].links %}<li><a href="{{ link.url }}">{{ link.title }}</a></li>{% endfor %}
-    </ul>
-  </nav>
-  <a class="cart-link" href="{{ routes.cart_url }}">Cart ({{ cart.item_count }})</a>
+<header class="bn-header" role="banner">
+  <div class="bn-header__inner shell">
+    <a class="bn-header__logo" href="{{ routes.root_url }}" aria-label="{{ shop.name | escape }}">
+      {{ section.settings.logo_text | escape }}
+    </a>
+
+    {% assign main_menu = section.settings.menu %}
+    {% if main_menu != blank and linklists[main_menu].links.size > 0 %}
+      <nav class="bn-header__nav" aria-label="Primary navigation">
+        <ul class="bn-header__list" role="list">
+          {% for link in linklists[main_menu].links %}
+            <li>
+              <a class="bn-header__link" href="{{ link.url }}">{{ link.title | escape }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </nav>
+    {% endif %}
+
+    <a class="bn-header__cart" href="{{ routes.cart_url }}" aria-label="Cart">
+      Cart ({{ cart.item_count }})
+    </a>
+  </div>
 </header>
+
+{% stylesheet %}
+.bn-header { border-bottom: 1px solid var(--stone, #C7C2B8); background: var(--cream, #F4EBDD); }
+.bn-header__inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem 0; }
+.bn-header__logo { text-decoration: none; color: var(--black, #111111); font: 600 1.05rem/1.2 Georgia, serif; }
+.bn-header__list { display: flex; gap: 1rem; margin: 0; padding: 0; list-style: none; }
+.bn-header__link, .bn-header__cart { text-decoration: none; color: var(--black, #111111); }
+@media (max-width: 900px) { .bn-header__inner { flex-wrap: wrap; } .bn-header__list { flex-wrap: wrap; } }
+{% endstylesheet %}
+
 {% schema %}
-{"name":"Header","settings":[{"type":"text","id":"logo_text","label":"Logo text","default":"Back Nine Supply Co."},{"type":"link_list","id":"menu","label":"Navigation menu","default":"main-menu"}]}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "text",
+      "id": "logo_text",
+      "label": "Logo text",
+      "default": "Back Nine Supply Co."
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Navigation menu"
+    }
+  ]
+}
 {% endschema %}
