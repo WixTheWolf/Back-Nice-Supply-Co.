@@ -1,0 +1,44 @@
+<footer class="footer" role="contentinfo">
+  <div class="shell footer-grid">
+    <div>
+      <h3>{{ section.settings.brand_heading }}</h3>
+      <p>{{ section.settings.statement }}</p>
+    </div>
+
+    <div>
+      <h4>{{ section.settings.signup_heading }}</h4>
+      <p>{{ section.settings.signup_text }}</p>
+      {% form 'customer', class: 'footer-signup-form' %}
+        <input type="hidden" name="contact[tags]" value="newsletter">
+        <input type="email" name="contact[email]" placeholder="Email address" required>
+        <button type="submit">{{ section.settings.signup_button }}</button>
+      {% endform %}
+    </div>
+
+    <div>
+      <h4>{{ section.settings.care_heading }}</h4>
+      <ul>
+        {% for link in linklists[section.settings.care_menu].links %}
+          <li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  <p class="copyright">© {{ 'now' | date: '%Y' }} {{ shop.name }}. {{ section.settings.tagline }}</p>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    {"type":"text","id":"brand_heading","label":"Brand heading","default":"Back Nine Supply Co."},
+    {"type":"textarea","id":"statement","label":"Brand statement","default":"Golf apparel without the noise. Quiet confidence for the modern golfer."},
+    {"type":"text","id":"signup_heading","label":"Signup heading","default":"Join the Clubhouse"},
+    {"type":"text","id":"signup_text","label":"Signup text","default":"Early access to new drops, private offers, and field notes from the Back Nine."},
+    {"type":"text","id":"signup_button","label":"Signup button label","default":"Get Early Access"},
+    {"type":"text","id":"care_heading","label":"Customer care heading","default":"Customer care"},
+    {"type":"link_list","id":"care_menu","label":"Customer care menu"},
+    {"type":"text","id":"tagline","label":"Bottom tagline","default":"Built for 18 holes. Worn everywhere after."}
+  ]
+}
+{% endschema %}
